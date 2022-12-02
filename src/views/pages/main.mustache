@@ -12,6 +12,7 @@
   {{#infos}}
     <h2> {{title}} disponíveis para adoção</h2>
   {{/infos}}
+
 <div class="container list">
 {{#data}}
   <div class="item">
@@ -24,5 +25,10 @@
   </div>
 {{/data}}
 </div>
+{{^data}}
+    <div class="no-list">
+      <h2>Nenhum item foi encontrado!</h2>
+    </div>
+{{/data}}
 
 {{>partials/footer}}

@@ -85,6 +85,13 @@ h2 {
 
 .no-list {
   margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-list h2 {
+  text-align: center;
 }
 .list {
   display: grid;
