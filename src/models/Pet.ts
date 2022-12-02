@@ -1,5 +1,4 @@
-import { TSpecie } from '../types/TSpecie';
-
+import { TSpecie } from '../libs/species';
 interface IPets {
   specie: TSpecie;
   image: string;
