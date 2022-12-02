@@ -20,7 +20,9 @@ export function petsByCategory(req: Request, res: Response) {
   const { slug } = req.params;
 
   if (!species.includes(slug)) {
-    res.send('Página não encontrada');
+    res.render('pages/notFound', {
+      menuItemsClass: activeTheSelectedMenuItem(''),
+    });
   }
 
   res.render('pages/main', {
