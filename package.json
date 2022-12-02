@@ -2,9 +2,11 @@
   "name": "canil",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "nodemon -e mustache,ts,json src/server.ts"
+    "dev": "nodemon -e mustache,ts,json src/server.ts",
+    "build": "tsc && copyfiles -u 1 src/**/*.mustache dist",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +20,7 @@
     "typescript": "^4.9.3"
   },
   "devDependencies": {
+    "copyfiles": "^2.4.1",
     "nodemon": "^2.0.20",
     "prettier": "^2.8.0",
     "ts-node": "^10.9.1"
