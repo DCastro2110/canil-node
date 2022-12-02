@@ -4,7 +4,7 @@ const pagesInfo = [
   {
     page: 'all',
     title: 'Todos os animais',
-    background: 'allnimals.jpg',
+    background: 'allanimals.jpg',
   },
   {
     page: 'dog',

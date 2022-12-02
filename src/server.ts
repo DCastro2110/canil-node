@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 // Setting up the template engine
-app.set('view engine', 'ustache');
+app.set('view engine', 'mustache');
 app.set('views', path.join(__dirname, 'views'));
 app.engine('mustache', mustache());
 
