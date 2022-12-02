@@ -9,7 +9,7 @@ export function activeTheSelectedMenuItem(menuItem: TSpecie | 'all' | '') {
   };
 
   if (menuItem === '') {
-    return menuItem;
+    return menuItemsClass;
   }
 
   menuItemsClass[menuItem] = 'active';

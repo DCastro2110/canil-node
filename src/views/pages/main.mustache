@@ -1,13 +1,17 @@
 {{>partials/header}}
 
-{{#infos}}
-<section
-  class="banner"
-  style="background-image: url('/images/{{background}}')">
-  {{title}}
+{{#showBanner}}
+  {{#infos}}
+  <section
+    class="banner"
+    style="background-image: url('/images/{{background}}')">
+    {{title}}
+  {{/infos}}
+{{/showBanner}}
 </section>
-  <h2> {{title}} disponíveis para adoção</h2>
-{{/infos}}
+  {{#infos}}
+    <h2> {{title}} disponíveis para adoção</h2>
+  {{/infos}}
 <div class="container list">
 {{#data}}
   <div class="item">

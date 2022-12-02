@@ -23,7 +23,7 @@ const pagesInfo = [
   },
   {
     page: 'search',
-    title: 'Buscar',
+    title: 'Animais encontrados, baseado nos parâmetros de busca,',
     background: undefined,
   },
 ];

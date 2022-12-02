@@ -12,6 +12,7 @@ export function petsHome(req: Request, res: Response) {
     infos: Page.getInfo('all'),
     data: Pet.getAll(),
     menuItemsClass: activeTheSelectedMenuItem('all'),
+    showBanner: true,
   });
 }
 
@@ -26,5 +27,6 @@ export function petsByCategory(req: Request, res: Response) {
     infos: Page.getInfo(slug as TSpecie),
     data: Pet.getBySpecie(slug as TSpecie),
     menuItemsClass: activeTheSelectedMenuItem(slug as TSpecie),
+    showBanner: true,
   });
 }
