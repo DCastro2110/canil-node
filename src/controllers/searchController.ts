@@ -3,8 +3,6 @@ import { Page } from '../models/Page';
 
 import { Pet } from '../models/Pet';
 
-import { activeTheSelectedMenuItem } from '../utils/activeTheSelectedMenuItem';
-
 export function search(req: Request, res: Response) {
   const { q: query } = req.query;
 
@@ -18,8 +16,8 @@ export function search(req: Request, res: Response) {
 
   res.render('pages/main', {
     infos: Page.getInfo('search'),
+    menuItems: Page.getItemsForMenu('search'),
     data: Pet.getByName(query),
-    menuItemsClass: activeTheSelectedMenuItem(''),
     showBanner: false,
     inputValue: query,
   });

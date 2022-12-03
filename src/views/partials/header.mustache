@@ -16,13 +16,10 @@
         </form>
     </div>
 </header>
-{{#menuItemsClass}}
 <nav>
     <ul>
-        <li class="{{all}}"><a href="/pets">Todos</a></li>
-        <li class="{{dog}}"><a href="/pets/dog">Cachorros</a></li>
-        <li class="{{cat}}"><a href="/pets/cat">Gatos</a></li>
-        <li class="{{fish}}"><a href="/pets/fish">Peixes</a></li>
+        {{#menuItems}}
+            <li class="{{class}}"><a href="{{slug}}">{{title}}</a></li>
+        {{/menuItems}}
     </ul>
 </nav>
-{{/menuItemsClass}}

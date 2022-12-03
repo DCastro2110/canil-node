@@ -5,7 +5,7 @@ import mustache from 'mustache-express';
 
 import { route } from './routes';
 
-import { activeTheSelectedMenuItem } from './utils/activeTheSelectedMenuItem';
+import { Page } from './models/Page';
 
 dotenv.config();
 
@@ -22,7 +22,7 @@ app.use(route);
 // Setting up a default page when route wasn't founded
 app.use((req, res) => {
   res.render('pages/notFound', {
-    menuItemsClass: activeTheSelectedMenuItem(''),
+    menuItems: Page.getItemsForMenu(''),
   });
 });
 

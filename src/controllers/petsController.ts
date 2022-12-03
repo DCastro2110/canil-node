@@ -10,8 +10,8 @@ import { activeTheSelectedMenuItem } from '../utils/activeTheSelectedMenuItem';
 export function petsHome(req: Request, res: Response) {
   res.render('pages/main', {
     infos: Page.getInfo('all'),
+    menuItems: Page.getItemsForMenu('all'),
     data: Pet.getAll(),
-    menuItemsClass: activeTheSelectedMenuItem('all'),
     showBanner: true,
   });
 }
@@ -21,14 +21,14 @@ export function petsByCategory(req: Request, res: Response) {
 
   if (!species.includes(slug)) {
     res.render('pages/notFound', {
-      menuItemsClass: activeTheSelectedMenuItem(''),
+      menuItems: Page.getItemsForMenu(''),
     });
   }
 
   res.render('pages/main', {
     infos: Page.getInfo(slug as TSpecie),
+    menuItems: Page.getItemsForMenu(slug as TSpecie),
     data: Pet.getBySpecie(slug as TSpecie),
-    menuItemsClass: activeTheSelectedMenuItem(slug as TSpecie),
     showBanner: true,
   });
 }
