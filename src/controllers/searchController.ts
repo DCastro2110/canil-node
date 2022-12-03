@@ -6,21 +6,21 @@ import { Pet } from '../models/Pet';
 import { activeTheSelectedMenuItem } from '../utils/activeTheSelectedMenuItem';
 
 export function search(req: Request, res: Response) {
-  const { q } = req.query;
+  const { q: query } = req.query;
 
-  if (!q || typeof q !== 'string') {
+  if (!query || typeof query !== 'string') {
     return res.redirect('/pets');
   }
 
-  if (q.trim() === '') {
+  if (query.trim() === '') {
     return res.redirect('/pets');
   }
 
   res.render('pages/main', {
     infos: Page.getInfo('search'),
-    data: Pet.getByName(q),
+    data: Pet.getByName(query),
     menuItemsClass: activeTheSelectedMenuItem(''),
     showBanner: false,
-    inputValue: q,
+    inputValue: query,
   });
 }
